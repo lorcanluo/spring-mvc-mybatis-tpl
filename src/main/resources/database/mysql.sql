@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS `mybatis`
+  DEFAULT CHARACTER SET utf8
+  COLLATE utf8_general_ci;
+
+GRANT ALL PRIVILEGES ON mybatis.* TO 'mybatis'@'localhost'
+IDENTIFIED BY 'mybatis'
+WITH GRANT OPTION;
+
+CREATE TABLE userTable (
+  userId INT PRIMARY KEY AUTO_INCREMENT,
+  name   VARCHAR(80) NULL
+);
+
