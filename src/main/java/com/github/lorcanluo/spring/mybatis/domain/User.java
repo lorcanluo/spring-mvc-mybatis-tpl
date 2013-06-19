@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 8751282105532159742L;
 
-    private int userId;
+    private int id;
 
     private String name;
 
@@ -17,11 +17,11 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int id) {
+        this.id = id;
     }
 }

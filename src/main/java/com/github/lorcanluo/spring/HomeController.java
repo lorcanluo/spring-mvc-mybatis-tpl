@@ -14,35 +14,30 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	@Autowired
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
     private UserService userService;
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+    @Autowired
+    public HomeController(UserService userService) {
+        this.userService = userService;
+    }
 
-        User user = userService.getUser(0);
-        model.addAttribute("name",user.getName());
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Locale locale, Model model) {
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
-		return "home";
-	}
-	
+        String formattedDate = dateFormat.format(date);
+
+        model.addAttribute("serverTime", formattedDate);
+
+        User user = userService.getUser(1);
+        model.addAttribute("name", user.getName());
+
+        return "home";
+    }
 }

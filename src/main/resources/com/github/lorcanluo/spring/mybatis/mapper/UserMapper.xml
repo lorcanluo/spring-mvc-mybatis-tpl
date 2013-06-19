@@ -20,8 +20,12 @@
 <mapper namespace="com.github.lorcanluo.spring.mybatis.mapper.UserMapper">
 
 	<cache/>
+
 	<select id="getUser" parameterType="int" resultType="User">
-    SELECT * FROM userTable WHERE userId = #{userId}
-    </select>
+		SELECT
+			*
+		FROM `User`
+		WHERE `id` = #{id}
+	</select>
 
 </mapper>
