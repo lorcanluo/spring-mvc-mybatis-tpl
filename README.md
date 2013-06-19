@@ -1,7 +1,7 @@
-spring-mvc-tpl
+spring-mvc-mybatis-tpl
 ==============
 
-Spring MVC 3.2.2 Template
+Spring MVC Mybatis 3.2.2 Template
 
 Dependencies:
 
@@ -17,3 +17,11 @@ Dependencies:
 - javax.servlet.jsp:jsp-api:2.1
 - javax.servlet:jstl:1.2
 - junit:junit:4.11
+- mysql:mysql-connector-java:5.1.18
+- commons-dbcp:commons-dbcp:1.3
+- org.mybatis:mybatis:3.2.2
+- org.mybatis:mybatis-spring:1.2.0
+- org.springframework:spring-jdbc:3.2.2.RELEASE
+
+
+
