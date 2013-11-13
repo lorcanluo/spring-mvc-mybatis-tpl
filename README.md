@@ -1,7 +1,7 @@
-spring-mvc-tpl
+spring-mvc-mybatis-tpl
 ==============
 
-Spring MVC 3.2.3 Template
+Spring MVC Mybatis 3.2.3 Template
 
 Dependencies:
 
