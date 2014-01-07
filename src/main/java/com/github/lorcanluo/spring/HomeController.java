@@ -16,8 +16,7 @@ import java.util.Locale;
 
 @Controller
 public class HomeController {
-
-    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private static Logger log = LoggerFactory.getLogger(HomeController.class);
 
     private UserService userService;
 
@@ -37,6 +36,8 @@ public class HomeController {
 
         User user = userService.getUser(1);
         model.addAttribute("name", user.getName());
+
+        log.info("rendering page 'home' ...");
 
         return "home";
     }
